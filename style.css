@@ -1,0 +1,223 @@
+:root {
+  --bg: #f3f7ff;
+  --text: #1f2b3d;
+  --muted: #66758d;
+  --card: #ffffff;
+  --line: #dde6f4;
+  --primary: #0f9b8e;
+  --primary-dark: #067f74;
+  --accent: #f59e0b;
+  --hero-start: #0d8ccf;
+  --hero-end: #0f9b8e;
+  --shadow: 0 16px 34px rgba(17, 40, 70, 0.12);
+}
+
+body.dark {
+  --bg: #0b1422;
+  --text: #e6efff;
+  --muted: #9eb0c8;
+  --card: #122033;
+  --line: #263a57;
+  --primary: #2ec4b6;
+  --primary-dark: #20a79b;
+  --accent: #f4b942;
+  --hero-start: #144a87;
+  --hero-end: #0f6f7b;
+  --shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 15%, rgba(13, 140, 207, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 10%, rgba(245, 158, 11, 0.12), transparent 28%),
+    var(--bg);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app-navbar {
+  background: linear-gradient(90deg, var(--hero-start), var(--hero-end));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 500;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #fff !important;
+}
+
+.hero-section {
+  background: linear-gradient(125deg, var(--hero-start), var(--hero-end));
+  color: #f7fcff;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+}
+
+.hero-chip {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.hero-panel {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.feature-card,
+.quiz-card,
+.status-card,
+.quote-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover,
+.status-card:hover,
+.quote-card:hover,
+.quiz-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px rgba(10, 32, 58, 0.2);
+}
+
+.btn-main {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(110deg, var(--primary), var(--accent));
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-main:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-outline-main {
+  border: 1px solid var(--primary);
+  color: var(--primary-dark);
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.btn-outline-main:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.page-head p,
+.feature-card p,
+.status-card p {
+  color: var(--muted);
+}
+
+.timer-pill,
+.score-pill {
+  border-radius: 999px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  background: rgba(15, 155, 142, 0.12);
+  font-weight: 700;
+}
+
+.option-btn {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 11px 14px;
+  text-align: left;
+  background: transparent;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.option-btn:hover {
+  border-color: var(--primary);
+  background: rgba(15, 155, 142, 0.08);
+}
+
+.option-btn.selected {
+  border-color: var(--primary);
+  background: rgba(15, 155, 142, 0.14);
+}
+
+.answer-box,
+.result-box {
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: rgba(15, 155, 142, 0.08);
+  padding: 14px;
+}
+
+.progress {
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(15, 155, 142, 0.16);
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  font-weight: 700;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+body.dark .site-footer {
+  background: rgba(12, 20, 34, 0.5);
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: moveUp 0.6s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes moveUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-main,
+  .btn-outline-main {
+    width: 100%;
+  }
+}
